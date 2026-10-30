@@ -3396,6 +3396,7 @@ export class AgentSessionRuntimeService extends BaseService {
       turnId,
       assistantMessageId,
       userMessage: syntheticMessage,
+      ...(entry.messageSnapshot ? { messageSnapshot: structuredClone(entry.messageSnapshot) } : {}),
       modelId,
       reasoningEffort,
       serviceTier,
